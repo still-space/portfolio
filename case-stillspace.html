@@ -206,56 +206,88 @@
 <!-- App Flow -->
 <div class="case-section fade-in">
   <h2>App Flow</h2>
-  <p>The core experience adapts to how the user feels right now — not a fixed routine, but a responsive companion.</p>
+  <p>The experience adapts to how you feel right now. Three energy levels, no questionnaires — the app responds with micro-activities matched to your current state.</p>
 
-  <h3>Mood check-in &rarr; Adaptive actions &rarr; Journal</h3>
-  <p>Three energy levels. No complex questionnaires. The app responds with micro-activities matched to your current state — from "place your hand on your chest" to "go outside, buy coffee."</p>
+  <div class="uf">
+    <!-- Row 1: Splash → Tab Bar -->
+    <div class="uf-row">
+      <div class="uf-node uf-purple">Splash Screen<span>2 sec auto-advance</span></div>
+      <div class="uf-arrow"></div>
+      <div class="uf-node uf-outline-purple">Tab Bar<span>Mood &middot; Journal &middot; Support</span></div>
+    </div>
 
-  <!-- Flow map -->
-  <div class="flow-map fade-in">
-    <div class="flow-row">
-      <div class="flow-node">
-        <div class="phone-mockup" style="width:200px"><img src="images/stillspace/1-mood-1.png" alt="Mood check-in" loading="lazy"></div>
-        <div class="flow-label">Mood Check-in</div>
-        <div class="flow-sublabel">How are you feeling?</div>
+    <!-- Branches from Tab Bar -->
+    <div class="uf-branch-line"></div>
+
+    <div class="uf-branches">
+      <!-- Main: Mood flow -->
+      <div class="uf-branch uf-branch-main">
+        <div class="uf-branch-label">Mood</div>
+        <div class="uf-node uf-purple">Selection<span>How are you today?</span></div>
+        <div class="uf-arrow-down"></div>
+        <div class="uf-choices">
+          <div class="uf-choice">Safe<span>I'm okay</span></div>
+          <div class="uf-choice">Gentle<span>Not great</span></div>
+          <div class="uf-choice">Air<span>Need help</span></div>
+        </div>
+        <div class="uf-arrow-down"></div>
+        <div class="uf-node uf-purple">Action Card<span>Suggested micro-action</span></div>
+        <div class="uf-arrow-down-label">Start</div>
+        <div class="uf-node uf-peach">In Progress<span>Did this help?</span></div>
+        <div class="uf-fork">
+          <div class="uf-fork-path">
+            <div class="uf-fork-label uf-label-green">Yes</div>
+            <div class="uf-arrow-down"></div>
+            <div class="uf-node uf-small uf-outline-grey">Log &rarr; Next action</div>
+          </div>
+          <div class="uf-fork-path">
+            <div class="uf-fork-label uf-label-grey">Not now</div>
+            <div class="uf-arrow-down"></div>
+          </div>
+        </div>
+        <div class="uf-arrow-down"></div>
+        <div class="uf-node uf-green">Completion<span>Confetti + results</span></div>
+        <div class="uf-arrow-down-label">Air only</div>
+        <div class="uf-node uf-small uf-outline-grey">Save anchor note</div>
+        <div class="uf-arrow-down"></div>
+        <div class="uf-node uf-outline-purple">Journal<span>Chart + actions + anchors</span></div>
       </div>
-      <div class="flow-connector"><svg width="60" height="24" viewBox="0 0 60 24"><path d="M0 12h50m-8-6l8 6-8 6" stroke="#2B5C8A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span class="flow-action">Select level</span></div>
-      <div class="flow-node">
-        <div class="phone-mockup" style="width:200px"><img src="images/stillspace/1-mood-1-1.png" alt="Energy level selected" loading="lazy"></div>
-        <div class="flow-label">Energy Level</div>
-        <div class="flow-sublabel">Safe / Gentle / Air</div>
+
+      <!-- Branch: Just Be Together -->
+      <div class="uf-branch">
+        <div class="uf-branch-label">Just Be Together</div>
+        <div class="uf-node uf-peach">Breathing circle<span>Haptic + ambient sound</span></div>
+        <div class="uf-fork">
+          <div class="uf-fork-path">
+            <div class="uf-fork-label uf-label-grey">Close</div>
+            <div class="uf-arrow-down"></div>
+            <div class="uf-node uf-small uf-outline-grey">&larr; Back to Mood</div>
+          </div>
+          <div class="uf-fork-path">
+            <div class="uf-fork-label uf-label-grey">5s</div>
+            <div class="uf-arrow-down"></div>
+            <div class="uf-node uf-small uf-outline-grey">Support button</div>
+          </div>
+        </div>
       </div>
-      <div class="flow-connector"><svg width="60" height="24" viewBox="0 0 60 24"><path d="M0 12h50m-8-6l8 6-8 6" stroke="#2B5C8A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span class="flow-action">Get suggestion</span></div>
-      <div class="flow-node">
-        <div class="phone-mockup" style="width:200px"><img src="images/stillspace/1-mood-2.png" alt="Action suggestion" loading="lazy"></div>
-        <div class="flow-label">Micro-action</div>
-        <div class="flow-sublabel">~150 tasks by level</div>
+
+      <!-- Branch: Quick Record -->
+      <div class="uf-branch">
+        <div class="uf-branch-label">Quick Record</div>
+        <div class="uf-node uf-outline-grey">Write achievement<span>Modal sheet</span></div>
+        <div class="uf-arrow-down"></div>
+        <div class="uf-node uf-outline-purple">Journal</div>
       </div>
-    </div>
-    <div class="flow-row" style="justify-content:flex-end;margin-top:16px">
-      <div class="flow-connector flow-connector-down"><svg width="24" height="40" viewBox="0 0 24 40"><path d="M12 0v30m-6-8l6 8 6-8" stroke="#2B5C8A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span class="flow-action">Done / Skip</span></div>
-    </div>
-    <div class="flow-row" style="justify-content:flex-end">
-      <div class="flow-node">
-        <div class="phone-mockup" style="width:200px"><img src="images/stillspace/1-mood-3.png" alt="Completion" loading="lazy"></div>
-        <div class="flow-label">Small Win</div>
-        <div class="flow-sublabel">Record &amp; celebrate</div>
-      </div>
-      <div class="flow-connector flow-connector-reverse"><svg width="60" height="24" viewBox="0 0 60 24"><path d="M60 12h-50m8-6l-8 6 8 6" stroke="#2B5C8A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span class="flow-action">View history</span></div>
-      <div class="flow-node">
-        <div class="phone-mockup" style="width:200px"><img src="images/stillspace/2-diary.png" alt="Journal" loading="lazy"></div>
-        <div class="flow-label">Journal</div>
-        <div class="flow-sublabel">Mood chart &amp; insights</div>
+
+      <!-- Branch: Support & Settings -->
+      <div class="uf-branch">
+        <div class="uf-branch-label">More</div>
+        <div class="uf-node uf-outline-grey">Support<span>Crisis helplines</span></div>
+        <div style="height:16px"></div>
+        <div class="uf-node uf-outline-grey">Settings<span>Language &middot; Theme &middot; Donate</span></div>
       </div>
     </div>
   </div>
-
-  <h3>Alternative paths</h3>
-  <ul>
-    <li><strong>Just Be Together:</strong> For when you can't do anything — a breathing circle with heartbeat haptics and ambient sound. No instructions, no timers. Just presence.</li>
-    <li><strong>Crisis support:</strong> Verified helpline numbers always one tap away — contextualized by language. Direct access to professional psychological support.</li>
-    <li><strong>Quick wins:</strong> Record small victories anytime — opened a window, drank water. That counts.</li>
-  </ul>
 </div>
 
 <hr class="divider">
