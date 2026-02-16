@@ -509,6 +509,59 @@ footer {
 }
 
 /* ========================================
+   COMPETITOR ANALYSIS TABLE
+   ======================================== */
+.comp-table-wrap {
+  overflow-x: auto; margin: 32px 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.1) transparent;
+}
+.comp-table {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+  min-width: 700px;
+}
+.comp-table thead th {
+  padding: 14px 16px; text-align: left;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-secondary);
+  border-bottom: 2px solid var(--border); white-space: nowrap;
+}
+.comp-table thead th:first-child { min-width: 160px; }
+.comp-table thead th.comp-highlight {
+  color: var(--accent); background: var(--accent-light);
+  border-radius: 8px 8px 0 0; border-bottom-color: var(--accent);
+}
+.comp-table tbody td {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  color: var(--text-secondary); line-height: 1.4; vertical-align: middle;
+}
+.comp-table tbody td:first-child {
+  font-weight: 600; color: var(--text); font-size: 13px;
+}
+.comp-table tbody td.comp-highlight {
+  background: rgba(43,92,138,0.03);
+}
+.comp-table tbody tr:last-child td { border-bottom: none; }
+.comp-check { color: #4A8C45; font-weight: 700; font-size: 16px; }
+.comp-cross { color: #C25555; font-weight: 700; font-size: 16px; }
+.comp-partial { color: #C4962C; font-weight: 600; font-size: 13px; }
+.comp-insight {
+  margin-top: 32px; padding: 24px 28px;
+  background: var(--accent-light); border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+.comp-insight p {
+  font-size: 15px; color: var(--text); line-height: 1.6;
+  max-width: none; margin-bottom: 0;
+}
+.comp-insight strong { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .comp-table { font-size: 13px; }
+  .comp-table thead th, .comp-table tbody td { padding: 10px 12px; }
+}
+
+/* ========================================
    TONE VOICE — do / don't cards
    ======================================== */
 .tone-intro {
