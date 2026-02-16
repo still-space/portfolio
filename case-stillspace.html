@@ -208,85 +208,148 @@
   <h2>App Flow</h2>
   <p>The experience adapts to how you feel right now. Three energy levels, no questionnaires — the app responds with micro-activities matched to your current state.</p>
 
-  <div class="uf">
-    <!-- Row 1: Splash → Tab Bar -->
-    <div class="uf-row">
-      <div class="uf-node uf-purple">Splash Screen<span>2 sec auto-advance</span></div>
-      <div class="uf-arrow"></div>
-      <div class="uf-node uf-outline-purple">Tab Bar<span>Mood &middot; Journal &middot; Support</span></div>
-    </div>
+  <div style="text-align:center;margin:32px 0">
+    <svg viewBox="0 0 620 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;height:auto">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="#C8C0B8"/></marker>
+        <marker id="ahd" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3.5 L0,7" fill="#D4D0CC"/></marker>
+      </defs>
 
-    <!-- Branches from Tab Bar -->
-    <div class="uf-branch-line"></div>
+      <!-- ===== MAIN FLOW (left, cx=165) ===== -->
 
-    <div class="uf-branches">
-      <!-- Main: Mood flow -->
-      <div class="uf-branch uf-branch-main">
-        <div class="uf-branch-label">Mood</div>
-        <div class="uf-node uf-purple">Selection<span>How are you today?</span></div>
-        <div class="uf-arrow-down"></div>
-        <div class="uf-choices">
-          <div class="uf-choice">Safe<span>I'm okay</span></div>
-          <div class="uf-choice">Gentle<span>Not great</span></div>
-          <div class="uf-choice">Air<span>Need help</span></div>
-        </div>
-        <div class="uf-arrow-down"></div>
-        <div class="uf-node uf-purple">Action Card<span>Suggested micro-action</span></div>
-        <div class="uf-arrow-down-label">Start</div>
-        <div class="uf-node uf-peach">In Progress<span>Did this help?</span></div>
-        <div class="uf-fork">
-          <div class="uf-fork-path">
-            <div class="uf-fork-label uf-label-green">Yes</div>
-            <div class="uf-arrow-down"></div>
-            <div class="uf-node uf-small uf-outline-grey">Log &rarr; Next action</div>
-          </div>
-          <div class="uf-fork-path">
-            <div class="uf-fork-label uf-label-grey">Not now</div>
-            <div class="uf-arrow-down"></div>
-          </div>
-        </div>
-        <div class="uf-arrow-down"></div>
-        <div class="uf-node uf-green">Completion<span>Confetti + results</span></div>
-        <div class="uf-arrow-down-label">Air only</div>
-        <div class="uf-node uf-small uf-outline-grey">Save anchor note</div>
-        <div class="uf-arrow-down"></div>
-        <div class="uf-node uf-outline-purple">Journal<span>Chart + actions + anchors</span></div>
-      </div>
+      <!-- Mood Check-in -->
+      <rect x="90" y="8" width="150" height="40" rx="8" fill="#8B7AB8"/>
+      <text x="165" y="33" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="13" font-weight="600">Mood Check-in</text>
 
-      <!-- Branch: Just Be Together -->
-      <div class="uf-branch">
-        <div class="uf-branch-label">Just Be Together</div>
-        <div class="uf-node uf-peach">Breathing circle<span>Haptic + ambient sound</span></div>
-        <div class="uf-fork">
-          <div class="uf-fork-path">
-            <div class="uf-fork-label uf-label-grey">Close</div>
-            <div class="uf-arrow-down"></div>
-            <div class="uf-node uf-small uf-outline-grey">&larr; Back to Mood</div>
-          </div>
-          <div class="uf-fork-path">
-            <div class="uf-fork-label uf-label-grey">5s</div>
-            <div class="uf-arrow-down"></div>
-            <div class="uf-node uf-small uf-outline-grey">Support button</div>
-          </div>
-        </div>
-      </div>
+      <!-- Arrow down -->
+      <line x1="165" y1="48" x2="165" y2="70" stroke="#C8C0B8" stroke-width="1.5" marker-end="url(#ah)"/>
 
-      <!-- Branch: Quick Record -->
-      <div class="uf-branch">
-        <div class="uf-branch-label">Quick Record</div>
-        <div class="uf-node uf-outline-grey">Write achievement<span>Modal sheet</span></div>
-        <div class="uf-arrow-down"></div>
-        <div class="uf-node uf-outline-purple">Journal</div>
-      </div>
+      <!-- Energy levels -->
+      <rect x="35" y="72" width="68" height="26" rx="6" fill="#A594CC"/>
+      <text x="69" y="89" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Safe</text>
+      <rect x="131" y="72" width="68" height="26" rx="6" fill="#A594CC"/>
+      <text x="165" y="89" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Gentle</text>
+      <rect x="227" y="72" width="68" height="26" rx="6" fill="#A594CC"/>
+      <text x="261" y="89" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Air</text>
 
-      <!-- Branch: Support & Settings -->
-      <div class="uf-branch">
-        <div class="uf-branch-label">More</div>
-        <div class="uf-node uf-outline-grey">Support<span>Crisis helplines</span></div>
-        <div style="height:16px"></div>
-        <div class="uf-node uf-outline-grey">Settings<span>Language &middot; Theme &middot; Donate</span></div>
-      </div>
-    </div>
+      <!-- Converge to Action -->
+      <line x1="69" y1="98" x2="165" y2="112" stroke="#C8C0B8" stroke-width="1.2"/>
+      <line x1="165" y1="98" x2="165" y2="112" stroke="#C8C0B8" stroke-width="1.2"/>
+      <line x1="261" y1="98" x2="165" y2="112" stroke="#C8C0B8" stroke-width="1.2"/>
+      <line x1="165" y1="112" x2="165" y2="120" stroke="#C8C0B8" stroke-width="1.5" marker-end="url(#ah)"/>
+
+      <!-- Action Card -->
+      <rect x="90" y="122" width="150" height="40" rx="8" fill="#8B7AB8"/>
+      <text x="165" y="147" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="13" font-weight="600">Action Card</text>
+
+      <!-- Try other loop -->
+      <path d="M240,135 C262,135 262,150 244,155" stroke="#C8C0B8" stroke-width="1.2" fill="none" stroke-dasharray="3,2" marker-end="url(#ahd)"/>
+      <text x="272" y="147" fill="#8B7AB8" font-family="DM Sans,sans-serif" font-size="9" font-weight="500">Try other</text>
+
+      <!-- Arrow down + label -->
+      <line x1="165" y1="162" x2="165" y2="188" stroke="#C8C0B8" stroke-width="1.5" marker-end="url(#ah)"/>
+      <text x="178" y="179" fill="#8B7AB8" font-family="DM Sans,sans-serif" font-size="9" font-weight="500">Start</text>
+
+      <!-- In Progress -->
+      <rect x="90" y="190" width="150" height="40" rx="8" fill="#E8B89A"/>
+      <text x="165" y="215" text-anchor="middle" fill="#2C2218" font-family="DM Sans,sans-serif" font-size="13" font-weight="600">In Progress</text>
+
+      <!-- Arrow down + label -->
+      <line x1="165" y1="230" x2="165" y2="256" stroke="#C8C0B8" stroke-width="1.5" marker-end="url(#ah)"/>
+      <text x="178" y="247" fill="#8B7AB8" font-family="DM Sans,sans-serif" font-size="9" font-weight="500">Done</text>
+
+      <!-- Completion -->
+      <rect x="90" y="258" width="150" height="40" rx="8" fill="#75AA7B"/>
+      <text x="165" y="283" text-anchor="middle" fill="#fff" font-family="DM Sans,sans-serif" font-size="13" font-weight="600">Completion</text>
+
+      <!-- Arrow to Journal -->
+      <path d="M165,298 V328 H228" stroke="#C8C0B8" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+      <!-- ===== JOURNAL (bottom center) ===== -->
+      <rect x="230" y="318" width="160" height="40" rx="8" fill="#fff" stroke="#8B7AB8" stroke-width="1.5"/>
+      <text x="310" y="343" text-anchor="middle" fill="#2C2218" font-family="DM Sans,sans-serif" font-size="13" font-weight="600">Journal</text>
+
+      <!-- ===== SIDE PATHS (right, cx=475) ===== -->
+
+      <!-- Branch spine from Mood -->
+      <path d="M240,28 H358" stroke="#C8C0B8" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <line x1="358" y1="28" x2="358" y2="278" stroke="#C8C0B8" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+      <!-- Branch tick → Be Together -->
+      <line x1="358" y1="85" x2="398" y2="85" stroke="#C8C0B8" stroke-width="1.2" marker-end="url(#ah)"/>
+      <!-- Branch tick → Quick Record -->
+      <line x1="358" y1="210" x2="398" y2="210" stroke="#C8C0B8" stroke-width="1.2" marker-end="url(#ah)"/>
+      <!-- Branch tick → Support -->
+      <line x1="358" y1="275" x2="398" y2="275" stroke="#C8C0B8" stroke-width="1.2" marker-end="url(#ah)"/>
+
+      <!-- Be Together -->
+      <rect x="400" y="72" width="140" height="26" rx="6" fill="#E8B89A"/>
+      <text x="470" y="89" text-anchor="middle" fill="#2C2218" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Just Be Together</text>
+
+      <!-- Arrow down to Breathing -->
+      <line x1="470" y1="98" x2="470" y2="122" stroke="#C8C0B8" stroke-width="1.5" marker-end="url(#ah)"/>
+
+      <!-- Breathing Circle -->
+      <rect x="400" y="124" width="140" height="36" rx="8" fill="#E8B89A"/>
+      <text x="470" y="147" text-anchor="middle" fill="#2C2218" font-family="DM Sans,sans-serif" font-size="12" font-weight="600">Breathing Circle</text>
+
+      <!-- Quick Record -->
+      <rect x="400" y="197" width="140" height="26" rx="6" fill="#fff" stroke="#C8C0B8" stroke-width="1.5"/>
+      <text x="470" y="214" text-anchor="middle" fill="#6B6B6B" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Quick Record</text>
+
+      <!-- Arrow from Quick Record to Journal -->
+      <path d="M470,223 V328 H390" stroke="#C8C0B8" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#ahd)"/>
+
+      <!-- Support -->
+      <rect x="400" y="262" width="140" height="26" rx="6" fill="#fff" stroke="#C8C0B8" stroke-width="1.5"/>
+      <text x="470" y="279" text-anchor="middle" fill="#6B6B6B" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Crisis Support</text>
+
+      <!-- ===== LEGEND ===== -->
+      <circle cx="155" cy="385" r="5" fill="#8B7AB8"/>
+      <text x="167" y="389" fill="#6B6B6B" font-family="DM Sans,sans-serif" font-size="10">Core flow</text>
+      <circle cx="260" cy="385" r="5" fill="#E8B89A"/>
+      <text x="272" y="389" fill="#6B6B6B" font-family="DM Sans,sans-serif" font-size="10">Emotional support</text>
+      <circle cx="395" cy="385" r="5" fill="#75AA7B"/>
+      <text x="407" y="389" fill="#6B6B6B" font-family="DM Sans,sans-serif" font-size="10">Achievement</text>
+    </svg>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- Key Screens -->
+<div class="case-section fade-in">
+  <h2>Key Screens</h2>
+
+  <h3>Mood Check-in &amp; Micro-actions</h3>
+  <p>The entry point: three energy levels, two quick-access modes, zero pressure. The app responds with ~150 gentle self-care tasks matched to how you feel — from "lean your back against something" to "go outside, buy coffee."</p>
+  <div class="screens-row">
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/light-1-mood-1.png" alt="Mood check-in — light theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/dark-1-mood-1.png" alt="Mood check-in — dark theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/dark-1-mood-2.png" alt="Micro-action suggestion" loading="lazy"></div>
+  </div>
+
+  <h3>Completion &amp; Reflection</h3>
+  <p>Every completed action is a small victory. Confetti, encouragement, and a prompt to leave a supportive note for your future self — an "anchor" to hold onto during harder days.</p>
+  <div class="screens-row">
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/light-1-mood-1-1.png" alt="Completion screen — light theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/dark-1-mood-1-1.png" alt="Completion screen — dark theme" loading="lazy"></div>
+  </div>
+
+  <h3>Just Be Together</h3>
+  <p>For when you can't do anything — a breathing circle with heartbeat haptics and ambient sound. No instructions, no timers. Just presence. After 5 seconds, a gentle link to crisis support appears.</p>
+  <div class="screens-row">
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/light-1-mood-3.png" alt="Breathing mode — light theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/dark-1-mood-3.png" alt="Breathing mode — dark theme" loading="lazy"></div>
+  </div>
+
+  <h3>Journal, Quick Record &amp; Support</h3>
+  <p>Mood tracking with day/week/month charts and pattern insights. Record small wins anytime — opened a window, drank water. Verified crisis helplines always one tap away.</p>
+  <div class="screens-row">
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/light-2-diary.png" alt="Journal — light theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/dark-2-diary.png" alt="Journal — dark theme" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/light-1-mood-4.png" alt="Quick record — small wins" loading="lazy"></div>
+    <div class="phone-mockup" style="width:160px"><img src="images/stillspace/support.png" alt="Crisis support — helplines" loading="lazy"></div>
   </div>
 </div>
 
