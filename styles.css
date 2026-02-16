@@ -162,6 +162,21 @@ section { max-width: var(--max-w); margin: 0 auto; padding: 80px 32px; }
 }
 .case-meta-value { font-size: 15px; font-weight: 500; }
 
+/* Hero split — text left, media right */
+.case-hero-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+.case-hero-text p {
+  font-size: 18px; color: var(--text-secondary); max-width: 640px;
+  margin-bottom: 32px; line-height: 1.7;
+}
+.case-hero-media {
+  flex-shrink: 0;
+}
+
 .case-section {
   max-width: var(--max-w); margin: 0 auto; padding: 60px 32px;
 }
@@ -750,6 +765,9 @@ footer {
   .case-card-body { padding: 24px; }
   .case-img-grid { grid-template-columns: 1fr; }
   .case-img-grid > div { padding: 12px; }
+  .case-hero-split { grid-template-columns: 1fr; gap: 32px; }
+  .case-hero-media { display: flex; justify-content: center; }
+  .case-hero-media .phone-mockup { width: 240px !important; }
   .case-section-split { grid-template-columns: 1fr; }
   .case-img-grid-3 { grid-template-columns: 1fr; }
   .case-img-full { padding: 16px; }
