@@ -63,6 +63,9 @@ nav .nav-links a:hover { color: var(--text); }
   color: var(--accent); font-size: 13px; font-weight: 500;
   border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.02em;
 }
+.hero-tag-green {
+  background: #E8F5E9; color: #2E7D32;
+}
 .hero h1 {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(36px, 5vw, 56px);
